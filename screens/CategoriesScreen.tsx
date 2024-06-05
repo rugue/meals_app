@@ -1,7 +1,9 @@
 // screens/CategoriesScreen.tsx
 import React from "react";
 import { View, Text, FlatList, TouchableOpacity } from "react-native";
-import { CATEGORIES, Category } from "../data/categories";
+//import { CATEGORIES, Category } from "../data/categories";
+import Category from "../models/Category";
+import { CATEGORIES } from "../data/dummy-data";
 
 interface CategoriesScreenProps {
   navigation: any; // Add navigation prop type
