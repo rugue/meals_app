@@ -1,23 +1,21 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { createDrawerNavigator } from "@react-navigation/drawer";
-
+// App.tsx
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 import CategoriesScreen from "../screens/CategoriesScreen";
 import MealsOverviewScreen from "../screens/MealsOverviewScreen";
-import MealDetailScreen from "../screens/MealDetailScreen";
-import FavoritesScreen from "../screens/FavoritesScreen";
 
-import { Text, View } from "react-native";
+const Stack = createStackNavigator();
 
-export default function Index() {
+const App: React.FC = () => {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
-    </View>
+    // <NavigationContainer>
+    <Stack.Navigator>
+      <Stack.Screen name="Categories" component={CategoriesScreen} />
+      <Stack.Screen name="MealsOverview" component={MealsOverviewScreen} />
+    </Stack.Navigator>
+    // </NavigationContainer>
   );
-}
+};
+
+export default App;
